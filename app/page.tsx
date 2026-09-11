@@ -1,5 +1,6 @@
-import SunriseSvg from "../src/svgs/sunrise.svg";
-import { Button } from "@/src/components/Button";
+import Link from "next/link"
+import SunriseSvg from "@/src/svg/sunrise.svg"
+import { Button } from "@/src/components/Button"
 
 export default function Home() {
   return (
@@ -9,15 +10,21 @@ export default function Home() {
         <SunriseSvg />
         <p className="text-2xl">Who are you here to visit?</p>
         <div className="flex flex-row items-center gap-2">
-          <Button>
-            <span className="font-medium">Stephen</span>
-          </Button>
-          <Button>
-            <span className="font-medium">Chelsey</span>
-          </Button>
+          <Link href="/stephen">
+            <Button>
+              <span className="font-medium">Stephen</span>
+            </Button>
+          </Link>
+          <Link href="/chelsey">
+            <Button>
+              <span className="font-medium">Chelsey</span>
+            </Button>
+          </Link>
         </div>
-        <span className="cursor-pointer underline">Give me Stelsey</span>
+        <Link href="/stelsey">
+          <span className="cursor-pointer underline">Give me Stelsey</span>
+        </Link>
       </main>
     </div>
-  );
+  )
 }
