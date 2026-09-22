@@ -3,14 +3,23 @@ import AltChurchSvg from "../../src/svg/alt-church.svg"
 import MusicSvg from "../../src/svg/music.svg"
 import MentoringSvg from "../../src/svg/mentoring.svg"
 import NatureSvg from "../../src/svg/nature.svg"
+import PawSvg from "../../src/svg/paw.svg"
+import ArrowUpRightFromSquareSvg from "../../src/svg/arrow-up-right-from-square.svg"
 import Link from "next/link"
+import { PortraitFrame } from "@/src/components/PortraitFrame"
+
+const JUAN_LINK = "https://juanlusichaurant.com"
+const HUNTER_LINK = "https://hunterjerochim.com"
 
 const STEPHEN_PAGE_CONFIG = [
   {
     title: "Medal",
     titleHref: "https://medal.tv",
     description:
-      "I worked at Medal for seven years, did tons of stuff, blah blah blah",
+      "I spent 7 years at Medal, and it was my first software job, first remote job and first startup all at once! I helped build the desktop and web apps used by millions of gamers to capture and share their clips, and got to lead entire projects from a rough idea all the way to production. Along the way I learned to dig into user behavior data to figure out what actually mattered, and to ship features that made people want to stick around.",
+    icon: (
+      <NatureSvg className="pointer-events-none absolute -right-10 -bottom-10 h-64 w-auto opacity-10" />
+    ),
     tags: [
       "Typescript",
       "React",
@@ -20,14 +29,20 @@ const STEPHEN_PAGE_CONFIG = [
       "Tailwind",
       "Docker",
       "GCP",
-      "Java",
+      "Cloudflare",
+      "Amplitude",
+      "Sentry",
+      "Honeycomb",
     ],
   },
   {
     title: "Alt Church",
     titleHref: "https://alt.church",
     description:
-      "Alt church is a platform where I am trying to change the world or something, who knows",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
+    icon: (
+      <AltChurchSvg className="pointer-events-none absolute -right-10 -bottom-10 h-64 w-auto opacity-10" />
+    ),
     tags: [
       "Typescript",
       "React",
@@ -42,40 +57,67 @@ const STEPHEN_PAGE_CONFIG = [
   },
   {
     title: "Mentoring",
-    titleHref: "https://alt.church",
-    description:
-      "I love mentoring! I have had the opportunity to mentor two close friends of mine to software careers of their own",
+    description: (
+      <>
+        When I first started to learn software development back in 2017, I was
+        mentored by a close friend for almost 2 years before I secured my first
+        job at Medal. While at Medal I had the opportunity to mentor{" "}
+        <Link href={HUNTER_LINK} className="text-accent">
+          Hunter
+        </Link>{" "}
+        and{" "}
+        <Link href={JUAN_LINK} className="text-accent">
+          Juan
+        </Link>{" "}
+        in the way I was mentored and helped both of them secure full time
+        engineering positions at Medal.
+      </>
+    ),
+    icon: (
+      <MentoringSvg className="pointer-events-none absolute -right-10 -bottom-10 h-64 w-auto opacity-10" />
+    ),
     tags: ["LeetCode", "CodeAcademy", "FreeCodeCamp"],
   },
   {
     title: "Music",
     titleHref: "https://soundcloud.com/stelseylesser",
     description:
-      "I love making music! I have been playing music for 30 years and love playing guitar, piano and singing my heart out :)",
-    tags: ["Drums", "Guitar", "Paino"],
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
+    icon: (
+      <MusicSvg className="pointer-events-none absolute -right-10 -bottom-10 h-64 w-auto opacity-10" />
+    ),
+    tags: ["Drums", "Guitar", "Piano", "Bass"],
   },
-  {
+  /*  {
     title: "Cat Daddy",
     titleHref: "https://cats.com",
     description:
-      "Chelsey and I have two wonderful kitty babies that we absolutely love <3",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
+    icon: (
+      <PawSvg className="pointer-events-none absolute -right-10 -bottom-10 h-64 w-auto opacity-10" />
+    ),
     tags: ["Moe", "Cheesy", "CatLifeBestLife"],
   },
   {
     title: "Nature",
     titleHref: "https://cats.com",
     description:
-      "Chelsey and I live in the Pacific Northwest and have fallen completely in love with the beautiful nature that surrounds us <3",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
+    icon: (
+      <NatureSvg className="pointer-events-none absolute -right-10 -bottom-10 h-64 w-auto opacity-10" />
+    ),
     tags: ["Moe", "Cheesy", "CatLifeBestLife"],
-  },
+  },*/
 ]
 
 export default function Stephen() {
   return (
     <div className="flex w-full flex-1 flex-col items-center px-4">
       <main className="flex max-w-300 flex-col gap-24 pt-40 pb-20">
-        <div className="flex w-full flex-row items-center gap-45">
-          <StephenSvg className="shrink-0" />
+        <div className="flex w-full flex-col items-center gap-24 lg:flex-row xl:gap-45">
+          <PortraitFrame innerClassName="px-5 py-6">
+            <StephenSvg className="text-accent" />
+          </PortraitFrame>
           <div className="flex flex-col gap-2">
             <h1 className="font-header text-6xl">Hi, I&apos;m Stephen!</h1>
             <p>
@@ -90,24 +132,30 @@ export default function Stephen() {
             </p>
           </div>
         </div>
-        <div className="grid w-full grid-cols-2 gap-4">
+        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
           {STEPHEN_PAGE_CONFIG.map((config, index) => {
-            const { title, titleHref, description, tags } = config
+            const { title, titleHref, description, tags, icon } = config
 
             return (
               <div
                 key={`config-item-${index}`}
-                className="flex flex-col gap-2 rounded-lg border border-black/32 bg-white/8 p-3"
+                className="relative flex flex-col gap-2 overflow-hidden rounded-lg border border-ink/24 bg-white/6 p-3"
               >
-                <Link href={titleHref}>
-                  <h1 className="text-2xl font-medium">{title}</h1>
-                </Link>
+                {icon}
+                <div className="group flex w-fit flex-row items-center gap-2">
+                  <h3 className="text-3xl font-medium">{title}</h3>
+                  {titleHref && (
+                    <Link href={titleHref}>
+                      <ArrowUpRightFromSquareSvg className="w-5 transition-colors duration-250 hover:text-accent" />
+                    </Link>
+                  )}
+                </div>
                 <p>{description}</p>
                 <div className="flex flex-row flex-wrap gap-2">
                   {tags.map((tag, index) => (
                     <div
                       key={`config-item-tag-${index}`}
-                      className="flex h-8 w-fit items-center justify-center rounded-lg border border-black bg-background px-2"
+                      className="flex h-8 w-fit items-center justify-center rounded-lg border border-accent/80 bg-accent/15 px-2 text-accent"
                     >
                       {tag}
                     </div>
