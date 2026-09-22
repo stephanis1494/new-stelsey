@@ -28,7 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-row p-6">
         <LeftSidebar />
-        <main className="flex min-h-full grow flex-col items-center justify-center">
+        <main className="flex min-h-full grow flex-col items-center justify-center px-12">
           {children}
         </main>
         <Footer />

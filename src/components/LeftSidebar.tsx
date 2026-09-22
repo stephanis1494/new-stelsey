@@ -17,6 +17,10 @@ const SIDEBAR_CONFIG = [
     label: "S",
     href: "/stephen",
   },
+  {
+    label: "Y",
+    href: "/stelsey",
+  },
 ]
 
 export const LeftSidebar = () => {
@@ -45,13 +49,13 @@ const SidebarButton = ({ label, href, active }: SidebarProps) => (
     <div
       className={cn(
         "group flex h-12 w-12 items-center justify-center rounded-lg border-3 transition-colors duration-250",
-        active ? "border-black" : "border-black/16 hover:border-black/32",
+        active ? "border-accent" : "border-ink/16 hover:border-ink/40",
       )}
     >
       <span
         className={cn(
           "text-xl font-bold transition-colors duration-250",
-          active ? "text-black" : "text-black/16 group-hover:text-black/32",
+          active ? "text-accent" : "text-ink/24 group-hover:text-ink/50",
         )}
       >
         {label}

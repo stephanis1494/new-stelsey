@@ -32,14 +32,18 @@ export const Footer = () => {
   if (!config) return null
 
   return (
-    <div className="fixed right-6 bottom-6 flex flex-col items-center gap-3">
-      <div className="h-15 w-0.75 bg-black/60" />
+    <div className="fixed right-6 bottom-6 flex flex-col items-center gap-4">
+      <div className="h-30 w-0.75 bg-ink/40" />
       {config.map(({ icon, href }, index) => (
-        <Link key={`footer-link-${index}`} href={href}>
+        <Link
+          key={`footer-link-${index}`}
+          href={href}
+          className="opacity-60 transition-[color,opacity] duration-250 hover:text-accent hover:opacity-100"
+        >
           {icon}
         </Link>
       ))}
-      <div className="h-15 w-0.75 bg-black/60" />
+      <div className="h-30 w-0.75 bg-ink/40" />
     </div>
   )
 }
