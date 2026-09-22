@@ -1,16 +1,16 @@
-import ChellySvg from "../../src/svg/chelly.svg"
 import AltChurchSvg from "../../src/svg/alt-church.svg"
 import MusicSvg from "../../src/svg/music.svg"
 import MentoringSvg from "../../src/svg/mentoring.svg"
 import NatureSvg from "../../src/svg/nature.svg"
 import Link from "next/link"
+import { PortraitFrame } from "@/src/components/PortraitFrame"
 
 const STEPHEN_PAGE_CONFIG = [
   {
     title: "Medal",
     titleHref: "https://medal.tv",
     description:
-      "I worked at Medal for seven years, did tons of stuff, blah blah blah",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
     tags: [
       "Typescript",
       "React",
@@ -27,7 +27,7 @@ const STEPHEN_PAGE_CONFIG = [
     title: "Alt Church",
     titleHref: "https://alt.church",
     description:
-      "Alt church is a platform where I am trying to change the world or something, who knows",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
     tags: [
       "Typescript",
       "React",
@@ -44,28 +44,28 @@ const STEPHEN_PAGE_CONFIG = [
     title: "Mentoring",
     titleHref: "https://alt.church",
     description:
-      "I love mentoring! I have had the opportunity to mentor two close friends of mine to software careers of their own",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
     tags: ["LeetCode", "CodeAcademy", "FreeCodeCamp"],
   },
   {
     title: "Music",
     titleHref: "https://soundcloud.com/stelseylesser",
     description:
-      "I love making music! I have been playing music for 30 years and love playing guitar, piano and singing my heart out :)",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
     tags: ["Drums", "Guitar", "Paino"],
   },
   {
     title: "Cat Daddy",
     titleHref: "https://cats.com",
     description:
-      "Chelsey and I have two wonderful kitty babies that we absolutely love <3",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
     tags: ["Moe", "Cheesy", "CatLifeBestLife"],
   },
   {
     title: "Nature",
     titleHref: "https://cats.com",
     description:
-      "Chelsey and I live in the Pacific Northwest and have fallen completely in love with the beautiful nature that surrounds us <3",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
     tags: ["Moe", "Cheesy", "CatLifeBestLife"],
   },
 ]
@@ -75,7 +75,7 @@ export default function Chelsey() {
     <div className="flex w-full flex-1 flex-col items-center px-4">
       <main className="flex max-w-300 flex-col gap-24 pt-40 pb-20">
         <div className="flex w-full flex-row items-center gap-45">
-          <ChellySvg className="shrink-0" />
+          <PortraitFrame innerClassName="h-[521px] w-[338px]" />
           <div className="flex flex-col gap-2">
             <h1 className="font-header text-6xl">Hi, I&apos;m Chelsey!</h1>
             <p>
@@ -97,7 +97,7 @@ export default function Chelsey() {
             return (
               <div
                 key={`config-item-${index}`}
-                className="flex flex-col gap-2 rounded-lg border border-black/32 bg-white/8 p-3"
+                className="flex flex-col gap-2 rounded-lg border border-ink/24 bg-white/6 p-3"
               >
                 <Link href={titleHref}>
                   <h1 className="text-2xl font-medium">{title}</h1>
@@ -107,7 +107,7 @@ export default function Chelsey() {
                   {tags.map((tag, index) => (
                     <div
                       key={`config-item-tag-${index}`}
-                      className="flex h-8 w-fit items-center justify-center rounded-lg border border-black bg-background px-2"
+                      className="flex h-8 w-fit items-center justify-center rounded-lg border border-accent/80 bg-accent/15 px-2 text-accent"
                     >
                       {tag}
                     </div>

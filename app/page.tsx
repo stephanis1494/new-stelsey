@@ -7,7 +7,7 @@ export default function Home() {
     <div className="flex w-full flex-1 flex-col items-center justify-center">
       <main className="flex flex-col items-center justify-center gap-4">
         <h1 className="font-header text-6xl">Hello, good friend</h1>
-        <SunriseSvg />
+        <SunriseSvg className="text-accent" />
         <p className="text-2xl">Who are you here to visit?</p>
         <div className="flex flex-row items-center gap-2">
           <Link href="/stephen">
