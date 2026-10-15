@@ -1,14 +1,29 @@
 "use client"
-import { ChangeEvent, FC, ReactNode, useState } from "react"
+import {
+  ChangeEvent,
+  FC,
+  HTMLInputAutoCompleteAttribute,
+  HTMLInputTypeAttribute,
+  ReactNode,
+} from "react"
 import { cn } from "@/src/utils/cn"
 
-type InputChangeEvent = ChangeEvent<HTMLInputElement>
-type InputProps = { className?: string }
+type InputProps = {
+  className?: string
+  value?: string
+  setValue: (value: string) => void
+  type?: HTMLInputTypeAttribute
+  autoComplete?: HTMLInputAutoCompleteAttribute
+}
 
-export const Input: FC<InputProps> = ({ className }): ReactNode => {
-  const [value, setValue] = useState<string>("")
-
-  const updateValue = (e: InputChangeEvent): void => {
+export const Input: FC<InputProps> = ({
+  className,
+  value,
+  setValue,
+  type,
+  autoComplete,
+}): ReactNode => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
   }
 
@@ -16,11 +31,13 @@ export const Input: FC<InputProps> = ({ className }): ReactNode => {
     <div>
       <input
         className={cn(
-          "text-forest h-10 min-w-80 rounded-sm bg-foreground px-2 text-lg text-forest-deep",
+          "h-10 min-w-80 rounded-sm bg-foreground px-2 text-lg text-forest text-forest-deep",
           className,
         )}
         value={value}
-        onChange={updateValue}
+        onChange={onChange}
+        type={type || "text"}
+        autoComplete={autoComplete || "text"}
       />
     </div>
   )

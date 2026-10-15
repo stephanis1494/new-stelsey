@@ -3,6 +3,7 @@ import { Alan_Sans, Irish_Grover } from "next/font/google"
 import "@/app/(site)/globals.css"
 import { LeftSidebar } from "@/src/components/LeftSidebar"
 import { RightSidebar } from "@/src/components/RightSidebar"
+import { StoreProvider } from "@/src/store/StoreProvider"
 
 const alanSans = Alan_Sans({
   variable: "--font-alan-sans",
@@ -31,7 +32,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex grow flex-col items-center justify-center px-12">
           {children}
         </main>
-        <RightSidebar />
+        <StoreProvider>
+          <RightSidebar />
+        </StoreProvider>
       </body>
     </html>
   )

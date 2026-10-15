@@ -29,7 +29,9 @@
   --color-ink: var(--ink);
   --color-accent: var(--gold);
   --color-accent-soft: var(--gold-soft);
+  --color-forest: var(--forest);
   --color-forest-deep: var(--forest-deep);
+  --color-teal: var(--teal);
 
   --font-sans: var(--font-alan-sans);
   --font-header: var(--font-irish-grover);

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Alan_Sans, Irish_Grover } from "next/font/google"
 import "@/app/(site)/globals.css"
+import { StoreProvider } from "@/src/store/StoreProvider"
 
 const alanSans = Alan_Sans({
   variable: "--font-alan-sans",
@@ -24,10 +25,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${alanSans.variable} ${irishGrover.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-row p-6">
-        <main className="flex grow flex-col items-center justify-center px-12">
-          {children}
-        </main>
+      <body className="flex min-h-full flex-row">
+        <StoreProvider>
+          <main className="flex grow flex-col items-center justify-center pe-8">
+            {children}
+          </main>
+        </StoreProvider>
       </body>
     </html>
   )
