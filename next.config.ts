@@ -1,6 +1,13 @@
 import type { NextConfig } from "next"
 
+const API_URL = process.env.API_URL ?? "http://localhost:8080"
+
 const nextConfig: NextConfig = {
+  // Proxy /api to the Spring backend so the browser sees a single origin
+  // (session + CSRF cookies just work, no CORS needed).
+  async rewrites() {
+    return [{ source: "/api/:path*", destination: `${API_URL}/api/:path*` }]
+  },
   turbopack: {
     rules: {
       "*.svg": {
