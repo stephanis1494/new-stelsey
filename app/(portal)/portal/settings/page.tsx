@@ -1,15 +1,8 @@
-"use client"
-import { RightSidebar } from "@/src/components/RightSidebar"
-import { PortalNavigationSidebar } from "@/app/(portal)/portal/_components/PortalNavigationSidebar"
-
-export default function Settings() {
+export default function PortalSettings() {
   return (
-    <div className="flex w-full flex-row">
-      <PortalNavigationSidebar />
-      <main className="flex grow flex-col pt-20">
-        <span className="mb-4 text-2xl font-medium">Settings</span>
-      </main>
-      <RightSidebar />
-    </div>
+    <section className="flex flex-col">
+      <h1 className="mb-4 text-2xl font-medium">Settings</h1>
+      <p>No settings yet, in work.</p>
+    </section>
   )
 }
