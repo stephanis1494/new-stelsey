@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [{ source: "/api/:path*", destination: `${API_URL}/api/:path*` }]
   },
+  // Lets next/image resize and re-encode photos from the R2 bucket's custom domain,
+  // so visitors get small, metadata-free versions instead of the multi-MB originals.
+  images: {
+    remotePatterns: [new URL("https://images.stelsey.com/**")],
+  },
   turbopack: {
     rules: {
       "*.svg": {

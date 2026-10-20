@@ -1,4 +1,3 @@
-import StephenSvg from "@/src/svg/stephen.svg"
 import AltChurchSvg from "@/src/svg/alt-church.svg"
 import MusicSvg from "@/src/svg/music.svg"
 import MentoringSvg from "@/src/svg/mentoring.svg"
@@ -7,9 +6,12 @@ import PawSvg from "@/src/svg/paw.svg"
 import ArrowUpRightFromSquareSvg from "@/src/svg/arrow-up-right-from-square.svg"
 import Link from "next/link"
 import { PortraitFrame } from "@/src/components/PortraitFrame"
+import { KittyModalButton } from "@/src/components/KittyModalButton"
 
 const JUAN_LINK = "https://juanlusichaurant.com"
 const HUNTER_LINK = "https://hunterjerochim.com"
+const STEPHEN_DAPPER =
+  "https://images.stelsey.com/stephen-fancy-pose-waist-up.jpg"
 
 const STEPHEN_PAGE_CONFIG = [
   {
@@ -39,7 +41,7 @@ const STEPHEN_PAGE_CONFIG = [
     title: "Alt Church",
     titleHref: "https://alt.church",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
+      "Alt Church is my side project and a hopeful future passion to bring a 100% transparent non-profit backed suite of software to users at the lowest possible cost. It is in a pre-alpha state with only a couple friends having full access. You can however poke around in guest mode and check out the 8 apps that are currently live. There is also a react-native app that is in alpha and work has started on the desktop app as well. ",
     icon: (
       <AltChurchSvg className="pointer-events-none absolute -right-10 -bottom-10 h-64 w-auto opacity-10" />
     ),
@@ -76,38 +78,46 @@ const STEPHEN_PAGE_CONFIG = [
     icon: (
       <MentoringSvg className="pointer-events-none absolute -right-10 -bottom-10 h-64 w-auto opacity-10" />
     ),
-    tags: ["LeetCode", "CodeAcademy", "FreeCodeCamp"],
+    tags: [
+      "LeetCode",
+      "CodeAcademy",
+      "FreeCodeCamp",
+      "Javascript",
+      "Node",
+      "Html",
+      "CSS",
+      "SQL",
+    ],
   },
   {
     title: "Music",
     titleHref: "https://soundcloud.com/stelseylesser",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
+      "Since I was very young, my favorite hobby has always been music. Chelsey and I’s living room is a band room with a full sound system, guitars, piano, drums and a variety of other instruments. I host jam sessions with friends at our house regularly and I also really love Karaoke. My favorite musical era is blues rock from the 60’s / 70’s and I am actively trying to improve my skills at both blues improvisation on the guitar and jazz on the piano.",
     icon: (
       <MusicSvg className="pointer-events-none absolute -right-10 -bottom-10 h-64 w-auto opacity-10" />
     ),
-    tags: ["Drums", "Guitar", "Piano", "Bass"],
+    tags: ["Drums", "Guitar", "Piano", "Bass", "Saxophone", "Flute"],
   },
-  /*  {
-    title: "Cat Daddy",
-    titleHref: "https://cats.com",
+  {
+    title: "Cat Dad",
+    modalId: "kitties",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
+      "Chelsey and I have two wonderful kitty babies, Cheese and Moe. Moe loves to sit by the window and watch our neighborhood squirrels eat Walnuts or spread out in front of the fire and get toasty. Cheese loves to curl up next to me while I work or meow insatiably at me until I follow him into his favorite bedroom so he can flop and receive affection. Both of them love to wander outside on their leashes and take in nature, both of them lose their minds for Churu <3 ",
     icon: (
       <PawSvg className="pointer-events-none absolute -right-10 -bottom-10 h-64 w-auto opacity-10" />
     ),
-    tags: ["Moe", "Cheesy", "CatLifeBestLife"],
+    tags: ["Jackson", "Moe", "Cheesy", "CatLifeBestLife"],
   },
   {
     title: "Nature",
-    titleHref: "https://cats.com",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
+      "Chelsey and I are very blessed to have a small rambler on the backside of McCollum Park in Mill Creek, Wa. There are majestic Cedar and Spruce trees surrounding our home and most homes in the neighborhood. We have a wonderful quarter acre piece of land that sure does keep us busy. We transformed the front yard two years ago to remove over a dozen stumps, bring in a bunch of soil and lay fresh grass <3 We still have a lot of work to realize it’s full potential but it is so much nicer than it was already :) ",
     icon: (
       <NatureSvg className="pointer-events-none absolute -right-10 -bottom-10 h-64 w-auto opacity-10" />
     ),
     tags: ["Moe", "Cheesy", "CatLifeBestLife"],
-  },*/
+  },
 ]
 
 export default function Stephen() {
@@ -115,8 +125,8 @@ export default function Stephen() {
     <div className="flex w-full flex-1 flex-col items-center px-4">
       <div className="flex max-w-300 flex-col gap-16 pt-12 pb-20 md:gap-24 md:pt-40">
         <div className="flex w-full flex-col items-center gap-24 lg:flex-row xl:gap-45">
-          <PortraitFrame innerClassName="px-5 py-6">
-            <StephenSvg className="h-auto w-60 text-accent sm:w-auto" />
+          <PortraitFrame>
+            <img src={STEPHEN_DAPPER} className="h-100" />
           </PortraitFrame>
           <div className="flex flex-col gap-2">
             <h1 className="font-header text-5xl md:text-6xl">
@@ -136,7 +146,8 @@ export default function Stephen() {
         </div>
         <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
           {STEPHEN_PAGE_CONFIG.map((config, index) => {
-            const { title, titleHref, description, tags, icon } = config
+            const { title, titleHref, description, tags, icon, modalId } =
+              config
 
             return (
               <div
@@ -151,6 +162,7 @@ export default function Stephen() {
                       <ArrowUpRightFromSquareSvg className="w-5 transition-colors duration-250 hover:text-accent" />
                     </Link>
                   )}
+                  {modalId === "kitties" && <KittyModalButton />}
                 </div>
                 <p>{description}</p>
                 <div className="flex flex-row flex-wrap gap-2">
