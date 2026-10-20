@@ -25,7 +25,9 @@ export const LoginForm = () => {
 
       dispatch(api.util.upsertQueryData("authMe", undefined, user))
 
-      router.push(user.role === "ADMIN" ? "/admin" : "/portal/projects")
+      router.push(
+        user.role === "ADMIN" ? "/admin/projects" : "/portal/projects",
+      )
     } catch (e) {
       // hook handles the error state for user
       console.warn("Failed to login user", e)

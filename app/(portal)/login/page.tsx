@@ -1,15 +1,17 @@
-import { Button } from "@/src/components/Button"
-import { Input } from "@/src/components/Input"
+import { redirect } from "next/navigation"
 import { LoginForm } from "@/app/(portal)/login/_components/LoginForm"
+import { getCurrentUser, homePathFor } from "@/src/server/getCurrentUser"
 
-export default function Login() {
+export default async function Login() {
+  // Returning visitors with a valid session skip the form entirely.
+  const me = await getCurrentUser()
+  if (me) redirect(homePathFor(me))
+
   return (
-    <div className="flex w-full flex-1 flex-col items-center justify-center">
-      <main className="flex flex-col items-center justify-center">
-        <span className="text-2xl font-bold">Welcome back you!</span>
-        <span>Log in to view your project</span>
-        <LoginForm />
-      </main>
-    </div>
+    <main className="flex min-h-dvh flex-col items-center justify-center p-4">
+      <h1 className="text-2xl font-bold">Welcome back you!</h1>
+      <p>Log in to view your projects</p>
+      <LoginForm />
+    </main>
   )
 }

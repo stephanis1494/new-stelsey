@@ -7,6 +7,15 @@ import type {
 
 const UNSAFE_METHODS = ["POST", "PUT", "PATCH", "DELETE"]
 
+// Only these areas require a session. A 401 elsewhere (e.g. the sidebar's /me check on
+// public pages) just means "not logged in" and must not redirect.
+const PROTECTED_PREFIXES = ["/admin", "/portal"]
+
+const isOnProtectedPage = () =>
+  PROTECTED_PREFIXES.some((prefix) =>
+    window.location.pathname.startsWith(prefix),
+  )
+
 let csrfRequest: Promise<unknown> | null = null
 
 const readCookie = (name: string) =>
@@ -47,10 +56,7 @@ const baseQuery: BaseQueryFn<
   }
 
   const result = await rawBaseQuery(args, api, extra)
-  if (
-    result.error?.status === 401 &&
-    !window.location.pathname.startsWith("/login")
-  ) {
+  if (result.error?.status === 401 && isOnProtectedPage()) {
     // eslint-disable-next-line @next/next/no-location-assign-relative-destination
     window.location.assign("/login")
   }

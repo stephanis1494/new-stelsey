@@ -13,8 +13,10 @@ const FRAMES = spreadFrames(FRAME_COUNT, CELL_RATIO)
 export default function Stelsey() {
   return (
     <div className="flex w-full flex-1 flex-col items-center px-4">
-      <main className="flex w-full max-w-300 flex-col gap-12 pt-40 pb-20">
-        <h1 className="text-center font-header text-6xl">Stelsey</h1>
+      <div className="flex w-full max-w-300 flex-col gap-12 pt-12 pb-20 md:pt-40">
+        <h1 className="text-center font-header text-5xl md:text-6xl">
+          Stelsey
+        </h1>
         <p className="text-center text-lg">
           Write some super insanely cute shit here, like really lay it on you
           know what I mean?
@@ -37,7 +39,7 @@ export default function Stelsey() {
             </div>
           ))}
         </div>
-      </main>
+      </div>
     </div>
   )
 }

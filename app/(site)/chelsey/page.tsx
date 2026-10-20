@@ -73,11 +73,13 @@ const STEPHEN_PAGE_CONFIG = [
 export default function Chelsey() {
   return (
     <div className="flex w-full flex-1 flex-col items-center px-4">
-      <main className="flex max-w-300 flex-col gap-24 pt-40 pb-20">
-        <div className="flex w-full flex-row items-center gap-45">
-          <PortraitFrame innerClassName="h-[521px] w-[338px]" />
+      <div className="flex max-w-300 flex-col gap-16 pt-12 pb-20 md:gap-24 md:pt-40">
+        <div className="flex w-full flex-col items-center gap-16 lg:flex-row xl:gap-45">
+          <PortraitFrame innerClassName="h-[400px] w-[260px] sm:h-[521px] sm:w-[338px]" />
           <div className="flex flex-col gap-2">
-            <h1 className="font-header text-6xl">Hi, I&apos;m Chelsey!</h1>
+            <h1 className="font-header text-5xl md:text-6xl">
+              Hi, I&apos;m Chelsey!
+            </h1>
             <p>
               I absolutely love building things, I love continuing to care for
               and improve them even more :) Over the past 9 years I’ve had the
@@ -90,7 +92,7 @@ export default function Chelsey() {
             </p>
           </div>
         </div>
-        <div className="grid w-full grid-cols-2 gap-4">
+        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
           {STEPHEN_PAGE_CONFIG.map((config, index) => {
             const { title, titleHref, description, tags } = config
 
@@ -117,7 +119,7 @@ export default function Chelsey() {
             )
           })}
         </div>
-      </main>
+      </div>
     </div>
   )
 }

@@ -113,13 +113,15 @@ const STEPHEN_PAGE_CONFIG = [
 export default function Stephen() {
   return (
     <div className="flex w-full flex-1 flex-col items-center px-4">
-      <main className="flex max-w-300 flex-col gap-24 pt-40 pb-20">
+      <div className="flex max-w-300 flex-col gap-16 pt-12 pb-20 md:gap-24 md:pt-40">
         <div className="flex w-full flex-col items-center gap-24 lg:flex-row xl:gap-45">
           <PortraitFrame innerClassName="px-5 py-6">
-            <StephenSvg className="text-accent" />
+            <StephenSvg className="h-auto w-60 text-accent sm:w-auto" />
           </PortraitFrame>
           <div className="flex flex-col gap-2">
-            <h1 className="font-header text-6xl">Hi, I&apos;m Stephen!</h1>
+            <h1 className="font-header text-5xl md:text-6xl">
+              Hi, I&apos;m Stephen!
+            </h1>
             <p>
               I absolutely love building things, I love continuing to care for
               and improve them even more :) Over the past 9 years I’ve had the
@@ -165,7 +167,7 @@ export default function Stephen() {
             )
           })}
         </div>
-      </main>
+      </div>
     </div>
   )
 }
