@@ -1,6 +1,5 @@
 export const STELSEY_IMAGES: string[] = [
   "https://images.stelsey.com/slelsey-wedding-kiss-sunset.jpg",
-  "https://images.stelsey.com/stelsey-nyc-christmas-dip.jpg",
   "https://images.stelsey.com/steve-nyc-christmas-posed-closer.jpg",
   "https://images.stelsey.com/cheese-christmas-tree.jpg",
   "https://images.stelsey.com/stelsey-beach-chillin.jpg",
