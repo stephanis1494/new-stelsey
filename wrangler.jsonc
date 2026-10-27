@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "stelsey",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-20",
+  // global_fetch_strictly_public: server-side fetches to stelsey.com go through the
+  // front door, so they reach the API's own route instead of looping back into this worker.
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS",
+  },
+  "services": [
+    {
+      // Self-reference used by OpenNext for caching; must match "name" above.
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "stelsey",
+    },
+  ],
+  // next/image resizing via Cloudflare Images.
+  "images": {
+    "binding": "IMAGES",
+  },
+  "observability": {
+    "enabled": true,
+  },
+}

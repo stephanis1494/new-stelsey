@@ -1,12 +1,14 @@
+import type { ReactNode, CSSProperties } from "react"
 import { cn } from "@/src/utils/cn"
 
 type PortraitFrameProps = {
   /** "round" gives the oval/circle portrait look, "rect" gives soft corners */
   shape?: "round" | "rect"
   className?: string
-  style?: React.CSSProperties
+  style?: CSSProperties
   innerClassName?: string
-  children?: React.ReactNode
+  children?: ReactNode
+  onClick?: () => void
 }
 
 export const PortraitFrame = ({

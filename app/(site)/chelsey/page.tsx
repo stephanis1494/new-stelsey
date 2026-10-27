@@ -1,109 +1,100 @@
-import AltChurchSvg from "@/src/svg/alt-church.svg"
-import MusicSvg from "@/src/svg/music.svg"
-import MentoringSvg from "@/src/svg/mentoring.svg"
-import NatureSvg from "@/src/svg/nature.svg"
 import Link from "next/link"
 import { PortraitFrame } from "@/src/components/PortraitFrame"
+import { LandscapeBackground } from "@/src/components/LandscapeBackground"
+import PawSvg from "@/src/svg/paw.svg"
+import ArrowUpRightFromSquareSvg from "@/src/svg/arrow-up-right-from-square.svg"
+import { KittyModalButton } from "@/src/components/KittyModalButton"
 
-const STEPHEN_PAGE_CONFIG = [
+const CHELSEY_PAGE_CONFIG = [
   {
-    title: "Medal",
-    titleHref: "https://medal.tv",
+    title: "Photography",
+    titleHref: "https://www.instagram.com/chelseyrae__",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
+      "Photography is how I slow down and actually notice the world around me. I love chasing golden hour light, catching friends in candid little moments and finding beauty in the everyday stuff most people walk right past. Living in the Pacific Northwest means moody skies, misty forests and endless green, which are basically a photographer's dream :) Most of my favorite shots end up on my Instagram, so hop on over if you'd like to see more!",
     tags: [
-      "Typescript",
-      "React",
-      "Redux",
-      "Express",
-      "Electron",
-      "Tailwind",
-      "Docker",
-      "GCP",
-      "Java",
+      "Portraits",
+      "Landscapes",
+      "Golden Hour",
+      "Candids",
+      "Lightroom",
+      "PNW",
     ],
   },
   {
-    title: "Alt Church",
-    titleHref: "https://alt.church",
+    title: "Travel",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
+      "Some of my happiest memories are from being somewhere new with a camera in hand. Whether it's a spontaneous road trip, a weekend getaway to a cozy little town or a bigger adventure somewhere I've never been, I love soaking in the local food, the scenery and the people. Stephen and I are always dreaming up our next trip, and there's a never-ending list of places we can't wait to explore together <3",
     tags: [
-      "Typescript",
-      "React",
-      "Redux",
-      "Express",
-      "Postgres",
-      "Electron",
-      "Tailwind",
-      "Docker",
-      "Cloudflare",
+      "Road Trips",
+      "Weekend Getaways",
+      "Hiking",
+      "Local Eats",
+      "Bucket List",
     ],
   },
   {
-    title: "Mentoring",
-    titleHref: "https://alt.church",
+    title: "Art",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
-    tags: ["LeetCode", "CodeAcademy", "FreeCodeCamp"],
+      "Art has been a part of my life for as long as I can remember. I love getting lost in a project, whether that's painting, sketching, crafting or tackling some DIY project around the house. It's my favorite way to unwind after a long day and to make our home feel a little more like us. I don't always know where a piece is going when I start, and honestly that's my favorite part :)",
+    tags: ["Painting", "Sketching", "Crafting", "DIY", "Home Decor"],
   },
   {
-    title: "Music",
-    titleHref: "https://soundcloud.com/stelseylesser",
+    title: "Cat Mom",
+    modalId: "kitties",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
-    tags: ["Drums", "Guitar", "Paino"],
-  },
-  {
-    title: "Cat Daddy",
-    titleHref: "https://cats.com",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
-    tags: ["Moe", "Cheesy", "CatLifeBestLife"],
-  },
-  {
-    title: "Nature",
-    titleHref: "https://cats.com",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium sapien magna, in tempor tellus fermentum ac. Ut congue viverra ligula at tincidunt. Proin hendrerit, diam in placerat sodales, mi nisi auctor mi, sed efficitur eros libero sed enim. Suspendisse hendrerit nibh ac egestas ullamcorper. Integer eu lobortis augue, quis. ",
-    tags: ["Moe", "Cheesy", "CatLifeBestLife"],
+      "Stephen and I have two wonderful kitty babies, Cheese and Moe. Moe loves to sit by the window and watch our neighborhood squirrels eat Walnuts or spread out in front of the fire and get toasty. Cheese loves to curl up next to me while I work or meow insatiably at me until I follow him into his favorite bedroom so he can flop and receive affection. Both of them love to wander outside on their leashes and take in nature, both of them lose their minds for Churu <3 ",
+    icon: (
+      <PawSvg className="pointer-events-none absolute -right-10 -bottom-10 h-64 w-auto opacity-10" />
+    ),
+    tags: ["Jackson", "Moe", "Cheesy", "CatLifeBestLife"],
   },
 ]
 
 export default function Chelsey() {
   return (
     <div className="flex w-full flex-1 flex-col items-center px-4">
+      <LandscapeBackground />
       <div className="flex max-w-300 flex-col gap-16 pt-12 pb-20 md:gap-24 md:pt-40">
         <div className="flex w-full flex-col items-center gap-16 lg:flex-row xl:gap-45">
-          <PortraitFrame innerClassName="h-[400px] w-[260px] sm:h-[521px] sm:w-[338px]" />
+          <PortraitFrame innerClassName="h-[400px] w-[260px] sm:h-[521px] sm:w-[338px]">
+            <img src="https://images.stelsey.com/chelsey-octoberfest-crown-queen.jpg" />
+          </PortraitFrame>
           <div className="flex flex-col gap-2">
             <h1 className="font-header text-5xl md:text-6xl">
               Hi, I&apos;m Chelsey!
             </h1>
             <p>
-              I absolutely love building things, I love continuing to care for
-              and improve them even more :) Over the past 9 years I’ve had the
-              privilege of learning the ins and outs of full stack software
-              development, design and dev ops. This skillset has unlocked
-              endless possibilities to shape online experiences that are
-              pleasing to use, which has quickly become my favorite thing in the
-              world to do. If you’d like to learn more about my programming
-              journey (Amongst other mostly silly anecdotes) just scroll down!
+              I&apos;m a creative at heart and happiest when I&apos;m making
+              something, whether that&apos;s capturing a moment behind the
+              camera, working on a new art project or planning our next
+              adventure :) I love finding beauty in the little things, spending
+              cozy days at home with Stephen and our two kitties, and getting
+              outside to soak up everything the Pacific Northwest has to offer.
+              If you&apos;d like to get to know me a little better (Amongst
+              other mostly silly anecdotes) just scroll down!
             </p>
           </div>
         </div>
         <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-          {STEPHEN_PAGE_CONFIG.map((config, index) => {
-            const { title, titleHref, description, tags } = config
+          {CHELSEY_PAGE_CONFIG.map((config, index) => {
+            const { title, titleHref, description, tags, icon, modalId } =
+              config
 
             return (
               <div
                 key={`config-item-${index}`}
-                className="flex flex-col gap-2 rounded-lg border border-ink/24 bg-white/6 p-3"
+                className="relative flex flex-col gap-2 overflow-hidden rounded-lg border border-ink/24 bg-white/6 p-3"
               >
-                <Link href={titleHref}>
-                  <h1 className="text-2xl font-medium">{title}</h1>
-                </Link>
+                {icon}
+                <div className="group flex w-fit flex-row items-center gap-2">
+                  <h3 className="text-3xl font-medium">{title}</h3>
+                  {titleHref && (
+                    <Link href={titleHref}>
+                      <ArrowUpRightFromSquareSvg className="w-5 transition-colors duration-250 hover:text-accent" />
+                    </Link>
+                  )}
+                  {modalId === "kitties" && <KittyModalButton />}
+                </div>
                 <p>{description}</p>
                 <div className="flex flex-row flex-wrap gap-2">
                   {tags.map((tag, index) => (

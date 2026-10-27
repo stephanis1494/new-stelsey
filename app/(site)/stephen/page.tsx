@@ -7,11 +7,11 @@ import ArrowUpRightFromSquareSvg from "@/src/svg/arrow-up-right-from-square.svg"
 import Link from "next/link"
 import { PortraitFrame } from "@/src/components/PortraitFrame"
 import { KittyModalButton } from "@/src/components/KittyModalButton"
+import { LandscapeBackground } from "@/src/components/LandscapeBackground"
 
 const JUAN_LINK = "https://juanlusichaurant.com"
 const HUNTER_LINK = "https://hunterjerochim.com"
-const STEPHEN_DAPPER =
-  "https://images.stelsey.com/stephen-fancy-pose-waist-up.jpg"
+const STEPHEN_DAPPER = "https://images.stelsey.com/seflie-beard.png"
 
 const STEPHEN_PAGE_CONFIG = [
   {
@@ -123,10 +123,11 @@ const STEPHEN_PAGE_CONFIG = [
 export default function Stephen() {
   return (
     <div className="flex w-full flex-1 flex-col items-center px-4">
+      <LandscapeBackground />
       <div className="flex max-w-300 flex-col gap-16 pt-12 pb-20 md:gap-24 md:pt-40">
         <div className="flex w-full flex-col items-center gap-24 lg:flex-row xl:gap-45">
-          <PortraitFrame>
-            <img src={STEPHEN_DAPPER} className="h-100" />
+          <PortraitFrame innerClassName="h-[400px] w-[260px] sm:h-[521px] sm:w-[338px]">
+            <img src={STEPHEN_DAPPER} className="h-full object-cover" />
           </PortraitFrame>
           <div className="flex flex-col gap-2">
             <h1 className="font-header text-5xl md:text-6xl">

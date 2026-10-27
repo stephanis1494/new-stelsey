@@ -37,6 +37,17 @@
   --font-header: var(--font-irish-grover);
 }
 
+/* Slow bob for the falling snow and rain in the background */
+@theme {
+  --animate-drift: drift 12s ease-in-out infinite alternate;
+
+  @keyframes drift {
+    to {
+      translate: 0 12px;
+    }
+  }
+}
+
 body {
   background: var(--background);
   color: var(--ink);

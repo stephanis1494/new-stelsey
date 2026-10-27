@@ -27,7 +27,7 @@ export const AccountMenu = ({ className }: AccountMenuProps) => {
   if (!me) {
     return (
       <Link href="/login" className={cn("whitespace-nowrap", className)}>
-        Login
+        Customer Login
       </Link>
     )
   }

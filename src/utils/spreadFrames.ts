@@ -1,3 +1,5 @@
+import { between, mulberry32 } from "@/src/utils/random"
+
 export type FrameShape = "oval" | "circle" | "square" | "portrait" | "landscape"
 
 export type FramePlacement = {
@@ -42,18 +44,6 @@ const rotationSpill = (width: number, height: number, degrees: number) => {
     y: (width * sin + height * cos - height) / 2,
   }
 }
-
-// Small seeded PRNG (mulberry32) so the "random" layout is identical on the
-// server and client - Math.random() here would cause a hydration mismatch.
-const mulberry32 = (seed: number) => () => {
-  seed = (seed + 0x6d2b79f5) | 0
-  let t = Math.imul(seed ^ (seed >>> 15), 1 | seed)
-  t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
-  return ((t ^ (t >>> 14)) >>> 0) / 4294967296
-}
-
-const between = (random: () => number, min: number, max: number) =>
-  min + random() * (max - min)
 
 /**
  * Produces a placement for each of `count` frames. The caller lays cells out
