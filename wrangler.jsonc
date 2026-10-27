@@ -6,6 +6,11 @@
   // global_fetch_strictly_public: server-side fetches to stelsey.com go through the
   // front door, so they reach the API's own route instead of looping back into this worker.
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "stelsey.com", "custom_domain": true },
+    { "pattern": "www.stelsey.com", "custom_domain": true },
+  ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS",
