@@ -15,13 +15,13 @@ type SocialLink = {
 }
 
 const STEPHEN_LINKS: SocialLink[] = [
-  { icon: <DocumentSvg />, href: "https://resume.com", label: "Resume" },
+  { icon: <DocumentSvg />, href: "/stephen/resume", label: "Resume" },
   {
     icon: <LinkedInSvg />,
     href: "https://www.linkedin.com/in/stelseylesser/",
     label: "LinkedIn",
   },
-  { icon: <EnvelopeSvg />, href: "mailto:", label: "Email" },
+  { icon: <EnvelopeSvg />, href: "mailto:stephen@stelsey.com", label: "Email" },
   {
     icon: <GithubSvg />,
     href: "https://github.com/stephanis1494",
@@ -31,6 +31,7 @@ const STEPHEN_LINKS: SocialLink[] = [
 
 const LINKS_BY_PATH: Record<string, SocialLink[]> = {
   "/stephen": STEPHEN_LINKS,
+  "/stephen/resume": STEPHEN_LINKS,
 }
 
 type SocialLinksProps = {
